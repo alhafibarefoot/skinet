@@ -13,17 +13,17 @@ namespace Infrastructure.Data
         private readonly StoreContext _context;
         public GenericRepository(StoreContext context)
         {
-            this._context = context;
+           _context = context;
             
         }
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _context.set<T>.FindAysnc(id);
+            return await _context.set<T>().FindAysnc(id);
         }
 
         public async Task<IReadOnlyList<T>> ListAllAsync()
         {
-            return await _context.set<T>.ToListAsync();
+            return await _context.set<T>().ToListAsync();
         }
     }
 }
