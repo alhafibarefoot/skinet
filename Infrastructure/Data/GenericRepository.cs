@@ -1,3 +1,6 @@
+using System.Security;
+using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
@@ -7,14 +10,20 @@ namespace Infrastructure.Data
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
-        public Task<T> GetByIdAsync(int id)
+        private readonly StoreContext _context;
+        public GenericRepository(StoreContext context)
         {
-            throw new System.NotImplementedException();
+            this._context = context;
+            
+        }
+        public async Task<T> GetByIdAsync(int id)
+        {
+            return await _context.set<T>.FindAysnc(id);
         }
 
-        public Task<IReadOnlyList<T>> ListAllAsync()
+        public async Task<IReadOnlyList<T>> ListAllAsync()
         {
-            throw new System.NotImplementedException();
+            return await _context.set<T>.ToListAsync();
         }
     }
 }
