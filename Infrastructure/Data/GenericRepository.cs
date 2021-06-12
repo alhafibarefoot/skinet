@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
 using Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
@@ -16,14 +17,14 @@ namespace Infrastructure.Data
            _context = context;
             
         }
-        public async Task<T> GetByIdAsync(int id)
+       public async Task<T> GetByIdAsync(int id)
         {
-            return await _context.set<T>().FindAysnc(id);
+            return await _context.Set<T>().FindAsync(id);
         }
 
-        public async Task<IReadOnlyList<T>> ListAllAsync()
+       public async Task<IReadOnlyList<T>> ListAllAsync()
         {
-            return await _context.set<T>().ToListAsync();
+           return await _context.Set<T>().ToListAsync();
         }
     }
 }

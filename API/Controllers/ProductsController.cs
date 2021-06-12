@@ -14,25 +14,19 @@ namespace API.Controllers
     {
         
       
-        private read only IGenericRepository <Product>  _productsRepo;
-        private read only IGenericRepository <ProductBrand>  _productBrandRepo;
-        private read only IGenericRepository <ProductType>  _productTypeRepo;
+        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
+        private readonly IGenericRepository<ProductType> _productTypeRepo;
+        private readonly IGenericRepository<Product> _productsRepo;
 
-        public ProductsController(
-            IGenericRepository <Product> productsRepo
-           ,IGenericRepository <ProductBrand> productBrandRepo
-           ,IGenericRepository <ProductType> productTypeRepo
-           
+        public ProductsController(IGenericRepository<Product> productsRepo,
+            IGenericRepository<ProductType> productTypeRepo,
+            IGenericRepository<ProductBrand> productBrandRepo
            )
         {
-            
-            _productsRepo=productsRepo;
-            _productBrandRepo=productBrandRepo;
-            _productTypeRepo=productTypeRepo;
-
-        
-
-
+           
+            _productsRepo = productsRepo;
+            _productTypeRepo = productTypeRepo;
+            _productBrandRepo = productBrandRepo;
         }
 
         [HttpGet]
