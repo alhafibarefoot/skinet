@@ -1,6 +1,3 @@
-using System.Security;
-using System.Runtime.InteropServices;
-using System.Runtime.CompilerServices;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Core.Entities;
@@ -17,14 +14,12 @@ namespace Infrastructure.Data
         public GenericRepository(StoreContext context)
         {
            _context = context;
-            
         }
        public async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
         }
 
-        
         public async Task<IReadOnlyList<T>> ListAllAsync()
         {
            return await _context.Set<T>().ToListAsync();
@@ -42,9 +37,15 @@ namespace Infrastructure.Data
             return await query.ToListAsync();
         }
 
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
+
          private IQueryable<T> ApplySpecification(ISpecification<T> spec)
         {
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
         }
+
     }
 }
