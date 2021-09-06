@@ -4,11 +4,10 @@
 
      <section class="col-3">
       <h5 class="text-warning ml-3 mt-3 mb-4">Sort</h5>
-      <select class="custom-select mb-4">
-          <option>Aphaptical</option>
-          <option>Price :Low to high</option>
-          <option>Price :High to Low</option>
-
+      <select class="custom-select mb-4" (change)="onSortSelected($event.target.value)">
+          <option *ngFor="let sort of sortOptions" [value]="sort.value">
+              {{sort.name}}
+          </option>
       </select>
 
        <h5 class="text-warning ml-3">Brands</h5>

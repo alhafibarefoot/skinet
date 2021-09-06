@@ -26,6 +26,6 @@
     "enableIvy": false, //I added because angular extension might not work correctly because ngcc operation failed try to invoke ngcc manually
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": false
   }
 }
