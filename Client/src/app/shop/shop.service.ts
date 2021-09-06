@@ -1,3 +1,4 @@
+import { ShopParams } from './../shared/models/ShopParams';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IBrand } from '../shared/models/brand';
@@ -13,19 +14,19 @@ export class ShopService {
 
   constructor(private http:HttpClient) { }
 
-  getProducts(brandId?:number,typeId?:number,sort?:string) {
+  getProducts(ShopParams:ShopParams) {
 
     let params=new HttpParams();
 
-    if(brandId){
-      params=params.append('brandId',brandId.toString());
+    if(ShopParams.brandId){
+      params=params.append('brandId',ShopParams.brandId.toString());
     }
-    if(typeId){
-      params=params.append('typeId',typeId.toString());
+    if(ShopParams.typeId){
+      params=params.append('typeId',ShopParams.typeId.toString());
     }
 
-    if( sort){
-      params=params.append('sort',sort);
+    if( ShopParams.sort){
+      params=params.append('sort',ShopParams.sort);
     }
 
 
