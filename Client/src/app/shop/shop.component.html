@@ -51,11 +51,10 @@
         >
         </app-paging-header>
 
-        <div class="form-inline mt-2">
-          <input   class="form-control mr-2" type="text"   placeholder="Search">
-          <button  class="btn btn-outline-primary my-2">Search</button>
-          <button  class="btn btn-outline-success ml-2 my-2">Reset</button>
-
+        <div class="form-inline mt-2" >
+          <input (keyup.enter)="onSearch()" type="text" class="form-control mr-2" #search placeholder="Search">
+          <button (click)="onSearch()" class="btn btn-outline-primary my-2">Search</button>
+          <button (click)="onReset()" class="btn btn-outline-success ml-2 my-2">Reset</button>
         </div>
 
       </div>
