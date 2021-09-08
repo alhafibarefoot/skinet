@@ -103,7 +103,7 @@ export class ShopComponent implements OnInit {
   }
 
   onReset() {
-    this.searchTerm.nativeElement.value = undefined;  //or ''
+    this.searchTerm.nativeElement.value = '';
     this.ShopParams = new ShopParams(); //to reset variables
     this.getProducts();
   }

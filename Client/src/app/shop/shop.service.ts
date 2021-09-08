@@ -29,6 +29,10 @@ export class ShopService {
       params=params.append('sort',ShopParams.sort);
    // }
 
+    if(ShopParams.search ){
+      params=params.append('search',ShopParams.search);
+    }
+
     params=params.append('pageIndex',ShopParams.pageNumber.toString());
     params=params.append('pageSize',ShopParams.pageSize.toString());
 
