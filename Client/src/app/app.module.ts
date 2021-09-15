@@ -25,7 +25,6 @@ import { CoreModule } from './core/core.module';
     BsDatepickerModule.forRoot(),
     HttpClientModule,
     CoreModule,
-    ShopModule,
     HomeModule
 
   ],
