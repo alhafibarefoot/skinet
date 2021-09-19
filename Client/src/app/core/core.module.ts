@@ -7,11 +7,12 @@ import { ServerErrorComponent } from './server-error/server-error.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SectionHeaderComponent } from './section-header/section-header.component';
 
 
 
 @NgModule({
-  declarations: [NavBarComponent, TestErrorComponent, ServerErrorComponent, NotFoundComponent],
+  declarations: [NavBarComponent, TestErrorComponent, ServerErrorComponent, NotFoundComponent, SectionHeaderComponent],
   imports: [
     CommonModule,
     RouterModule,
