@@ -25,14 +25,14 @@ export class TestErrorComponent implements OnInit {
     })
   }
   get500Error() {
-    this.http.get(this.baseUrl + 'buggy/servererror').subscribe(response => {
+    this.http.get(this.baseUrl + 'Buggy/servererror').subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
     })
   }
   get400Error() {
-    this.http.get(this.baseUrl + 'buggy/badrequest').subscribe(response => {
+    this.http.get(this.baseUrl + 'Buggy/badrequest').subscribe(response => {
       console.log(response);
     }, error => {
       console.log(error);
