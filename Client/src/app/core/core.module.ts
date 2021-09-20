@@ -22,6 +22,10 @@ import { SectionHeaderComponent } from './section-header/section-header.componen
       preventDuplicates: true
     }),
   ],
-  exports:[NavBarComponent]
+  exports:[
+    NavBarComponent,
+    SectionHeaderComponent
+
+  ]
 })
 export class CoreModule { }
