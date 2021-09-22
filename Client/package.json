@@ -21,6 +21,7 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.0.2",
+    "breadcrumb": "^1.0.0",
     "font-awesome": "^4.7.0",
     "ngx-bootstrap": "^6.2.0",
     "ngx-toastr": "^14.1.3",
