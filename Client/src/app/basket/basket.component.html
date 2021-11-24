@@ -3,9 +3,9 @@
     <p>There are no items in your basket</p>
   </div>
 
-  <div *ngIf="(basket$ | async) as basket">
+  <div *ngIf="basket$ | async ">
       <ul>
-        <li *ngFor="let item of basket.items">
+        <li *ngFor="let item of (basket$ | async).items">
           {{item.productName}} -  {{item.quantity}}
         </li>
       </ul>
