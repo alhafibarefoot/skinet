@@ -1,3 +1,4 @@
+import { IBasketItem } from './../shared/models/basket';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BasketService } from 'src/app/basket/basket.service';
@@ -17,4 +18,15 @@ export class BasketComponent implements OnInit {
     this.basket$ = this.basketService.basket$;
   }
 
+  removeBasketItem(item: IBasketItem) {
+    this.basketService.removeItemFromBasket(item);
+  }
+
+  incrementItemQuantity(item: IBasketItem) {
+    this.basketService.incrementItemQuantity(item);
+  }
+
+  decrementItemQuantity(item: IBasketItem) {
+    this.basketService.decrementItemQuantity(item);
+  }
 }
