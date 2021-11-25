@@ -1,8 +1,10 @@
 
 
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 namespace Infrastructure.Identity
 {
-    public class AppIdentityDbContext 
+    public class AppIdentityDbContext : IdentityDbContext
     {
         
     }
