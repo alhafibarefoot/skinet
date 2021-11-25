@@ -1,7 +1,7 @@
 ﻿obj
 bin
 *.db
-appsettings.json
 *.rdb
-publish
-wwwroot
+# appsettings.json
+# publish
+# wwwroot
