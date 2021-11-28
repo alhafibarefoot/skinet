@@ -1,6 +1,8 @@
 using Core.Entities.identity;
 using Infrastructure.Identity;
+
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace API.Extensions
@@ -14,8 +16,9 @@ namespace API.Extensions
             builder = new IdentityBuilder(builder.UserType, builder.Services);
             builder.AddEntityFrameworkStores<AppIdentityDbContext>();
             builder.AddSignInManager<SignInManager<AppUser>>();
-          
-            services.AddAuthentication(); //we have to configure this in the future , But we add this now to give us builder.AddSignInManager access
+
+            services.AddAuthentication();
+
             return services;
         }
     }

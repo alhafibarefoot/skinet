@@ -14,10 +14,6 @@ namespace API
 {
     public class Program
     {
-        // public static void Main(string[] args)
-        // {
-        //     CreateHostBuilder(args).Build().Run();
-        // }
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
@@ -28,14 +24,12 @@ namespace API
             {
                 var context = services.GetRequiredService<StoreContext>();
                 await context.Database.MigrateAsync();
-                await StoreContextSeed.SeedAsync(context,loggerFactory);
-
+                await StoreContextSeed.SeedAsync(context, loggerFactory);
+                
                 var userManager = services.GetRequiredService<UserManager<AppUser>>();
                 var identityContext = services.GetRequiredService<AppIdentityDbContext>();
                 await identityContext.Database.MigrateAsync();
                 await AppIdentityDbContextSeed.SeedUsersAsync(userManager);
-                 
-                
             }
             catch (Exception ex)
             {
@@ -45,7 +39,6 @@ namespace API
 
             host.Run();
         }
-
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
